@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+    
+    <h5> {{locations[0]}}
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        {{locations[1].upper()}}
+    </h5>
+
+        
+</div></div>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Day</th>
+            <th scope="col">Time</th>
+            <th scope="col">Temp</th>
+            <th scope="col">Humidity</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for date, day, time, temp, hu, desc in records_res %}
+        <tr>
+        <td>{{date}}</td>
+        <td>{{day}}</td> 
+        <td>{{time}}</td> 
+        <td>{{temp}}</td> 
+        <td>{{hu}}</td>
+        <td>{{desc}}</td> 
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
